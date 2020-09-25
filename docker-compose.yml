@@ -1,11 +1,11 @@
 version: '3.3'
 services:
-  docker-risk_base:
+  docker-risk_base1:
    restart: always
-   container_name: risk_base
+   container_name: docker-risk_base1
    image: mariadb
    environment:
-    MYSQL_DATABASE: helloDocker
+    MYSQL_DATABASE: riskframework
     MYSQL_ROOT_PASSWORD: root
     MYSQL_ROOT_HOST: '%'
    volumes:
@@ -21,11 +21,11 @@ services:
    expose:
     - "8880"
    ports:
-    - 8088:8880
+    - 8880:8880
    environment:
     WAIT_HOSTS: mariadb:3306
    depends_on:
-    - docker-risk_base
+    - docker-risk_base1
     
 
    
